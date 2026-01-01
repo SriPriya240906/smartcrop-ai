@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+*.pkl
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+

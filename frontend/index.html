@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Crop Recommendation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <h1>Smart Crop Recommendation</h1>
+  <p class="subtitle">Get AI-powered crop suggestions based on your farm conditions</p>
+
+  <!-- Location & Climate -->
+  <section class="section" id="climate-section">
+    <h2>Location & Climate Data</h2>
+    <div class="pin-input">
+      <input type="text" id="pinCode" placeholder="Enter PIN Code">
+      <button id="fetchClimateBtn">Fetch Climate Data</button>
+    </div>
+
+    <div class="climate-cards">
+      <div class="card orange">Temperature <span id="temperature">-</span>°C</div>
+      <div class="card blue">Rainfall <span id="rainfall">-</span> mm</div>
+      <div class="card green">Humidity <span id="humidity">-</span>%</div>
+    </div>
+
+    <div class="location-fields">
+      <input type="text" id="city" placeholder="City" readonly>
+      <input type="text" id="district" placeholder="District" readonly>
+      <input type="text" id="state" placeholder="State" readonly>
+    </div>
+  </section>
+
+  <!-- Soil & Farm -->
+  <section class="section" id="soil-section">
+    <h2>Soil & Farm Details</h2>
+
+    <div class="sliders">
+      <label>Nitrogen (N): <span id="N">50</span> kg/ha</label>
+      <input type="range" id="inputN" min="0" max="100" value="50">
+
+      <label>Phosphorus (P): <span id="P">40</span> kg/ha</label>
+      <input type="range" id="inputP" min="0" max="100" value="40">
+
+      <label>Potassium (K): <span id="K">45</span> kg/ha</label>
+      <input type="range" id="inputK" min="0" max="100" value="45">
+
+      <label>Soil pH: <span id="PH">6.5</span></label>
+      <input type="range" id="inputPH" min="0" max="14" value="6.5" step="0.1">
+    </div>
+
+    <label>Soil Type</label>
+    <select id="soilType">
+      <option value="Alluvial">Alluvial</option>
+      <option value="Red">Red</option>
+      <option value="Black">Black</option>
+      <option value="Laterite">Laterite</option>
+    </select>
+
+    <label>Irrigation Method</label>
+    <div class="irrigation-types">
+      <div class="irrigation-card" data-irrigation="Drip">Drip</div>
+      <div class="irrigation-card" data-irrigation="Sprinkler">Sprinkler</div>
+      <div class="irrigation-card" data-irrigation="Flood">Flood</div>
+      <div class="irrigation-card" data-irrigation="Rainfed">Rainfed</div>
+    </div>
+
+    <label>Land Size (acres)</label>
+    <input type="number" id="landSize" value="5">
+  </section>
+
+  <!-- Budget & Farming -->
+  <section class="section" id="budget-section">
+    <h2>Budget & Farming Method</h2>
+
+    <label>Budget: ₹<span id="budget">150000</span></label>
+    <input type="range" id="budgetInput" min="10000" max="500000" step="1000" value="150000">
+
+    <label>Farming Method</label>
+    <div class="farming-methods">
+      <div class="farming-card" data-method="Traditional">Traditional</div>
+      <div class="farming-card" data-method="Organic">Organic</div>
+      <div class="farming-card" data-method="Smart">Smart</div>
+    </div>
+
+    <button id="analyzeBtn">Analyze & Recommend Crop</button>
+  </section>
+
+  <!-- Recommended Crop -->
+  <section class="section" id="result-section">
+  <h2>Recommended Crop</h2>
+  <div class="recommendation-card">
+    <div id="recommendedCrop" class="crop-name">Waiting for analysis...</div>
+
+    <!-- Separate box for growing steps -->
+    <div id="growingStepsContainer" class="growing-steps-container">
+      <ul id="growingSteps" class="growing-steps"></ul>
+    </div>
+  </div>
+</section>
+
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

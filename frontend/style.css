@@ -1,0 +1,115 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #bcf4ba;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container { max-width: 900px; margin: 20px auto; padding: 20px; }
+
+h1 { text-align: center; color: #2a6f4b; }
+.subtitle { text-align:center; color: #555; margin-bottom:30px; }
+
+.section { background: #fffefe; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+.pin-input { display: flex; gap: 10px; margin-bottom: 15px; }
+.pin-input input { flex:1; padding:8px; border-radius:5px; border:1px solid #ccc; }
+.pin-input button { padding:8px 12px; border:none; border-radius:5px; background:#28a745; color:#fff; cursor:pointer; }
+
+.climate-cards { display:flex; gap:10px; margin-bottom:15px; }
+.card { flex:1; color:#fff; padding:15px; border-radius:8px; text-align:center; font-weight:bold; font-size:1.2rem; }
+.card.orange { background:#ff8c42; }
+.card.blue { background:#4287f5; }
+.card.green { background:#42f554; }
+
+.location-fields { display:flex; gap:10px; margin-bottom:10px; }
+.location-fields input { flex:1; padding:6px; border-radius:5px; border:1px solid #ccc; }
+
+.sliders label { display:block; margin:10px 0 4px; font-weight:bold; }
+.sliders input[type="range"] { width:100%; }
+
+.irrigation-types, .farming-methods { display:flex; gap:10px; margin:10px 0; }
+.irrigation-card, .farming-card { flex:1; padding:10px; border-radius:8px; border:1px solid #ccc; text-align:center; cursor:pointer; transition:0.2s; }
+.irrigation-card.active, .farming-card.active { background:#28a745; color:#fff; border-color:#28a745; }
+
+.recommendation-card { background:#e8f5e9; border:2px solid #28a745; padding:20px; font-size:1.6rem; font-weight:bold; text-align:center; border-radius:10px; margin-top:10px; }
+
+button#analyzeBtn { width:100%; padding:12px; border:none; border-radius:8px; background:#007bff; color:#fff; font-size:1.1rem; cursor:pointer; margin-top:10px; }
+button#analyzeBtn:disabled { background:#7aa7d9; cursor:not-allowed; }
+
+input[type="number"] { width:100px; padding:6px; border-radius:5px; border:1px solid #ccc; }
+input[type="range"] { cursor:pointer; }
+/* ------------------ Soil Type Dropdown ------------------ */
+#soilType {
+  width: 100%;          /* full width of container */
+  padding: 10px;        /* increase padding for better click area */
+  font-size: 1rem;      /* slightly bigger text */
+  border-radius: 8px;   /* rounded corners */
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/* ------------------ City / District / State Inputs ------------------ */
+.location-fields input {
+  flex: 1;              /* equal width for all 3 boxes */
+  padding: 10px;        /* larger input area */
+  font-size: 1rem;      /* bigger text */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.growing-steps {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.growing-steps li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+/* Recommendation card */
+.recommendation-card {
+  background:#e8f5e9;
+  border:2px solid #28a745;
+  padding:20px;
+  font-size:1.6rem;
+  font-weight:bold;
+  text-align:center;
+  border-radius:10px;
+  margin-top:10px;
+  display:flex;
+  flex-direction: column;
+  gap: 15px; /* space between crop name and steps box */
+}
+
+/* Crop name */
+.crop-name {
+  font-size:1.8rem;
+  font-weight:700;
+  color:#2a6f4b;
+}
+
+/* Separate box for growing steps */
+.growing-steps-container {
+  background:#f1f9f3;
+  border:1px solid #a5d6a7;
+  border-radius:8px;
+  padding:15px;
+  font-size:1rem;
+  color:#333;
+  text-align:left;
+}
+
+/* Growing steps list */
+.growing-steps {
+  margin:0;
+  padding-left:20px;
+  list-style: disc;
+}
+
+.growing-steps li {
+  margin-bottom:6px;
+  line-height:1.5;
+}
